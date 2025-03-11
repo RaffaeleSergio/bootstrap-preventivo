@@ -6,15 +6,10 @@ const sumP = document.getElementById("sum");
 const codeInput = document.getElementById("code");
 const sconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
-let workSelect = document.getElementById("work").value;
+
 
 preventForm.addEventListener("submit", gestisciForm);
 
-for (let i = 0; i < sconto.length; i++) {
-    const curSconto = sconto[i];
-
-
-}
 
 
 
@@ -23,17 +18,18 @@ function gestisciForm(event) {
     event.preventDefault();
     let workSelect = document.getElementById("work").value;
     let prezzo;
-    if (workSelect === projectSelect) {
-        prezzo = 10 * 33.60
+    const hours = 10;
+    if (workSelect === backendSelect) {
+        prezzo = hours * 20.50
         console.log(prezzo);
 
     } else if (workSelect === frontendSelect) {
-        prezzo = 10 * 15.30
-    } else {
-        prezzo = 10 * 20.50
-    }
+        prezzo = hours * 15.30
+    } else if (workSelect === projectSelect){
+        prezzo = hours * 33.60
+    } else{}
 
-    let prezzoScontato = codeInput.value;
+ 
     
 
     const tot = prezzo.toFixed(2);
