@@ -25,12 +25,20 @@ function gestisciForm(event) {
 
     } else if (workSelect === frontendSelect) {
         prezzo = hours * 15.30
-    } else if (workSelect === projectSelect){
+    } else if (workSelect === projectSelect) {
         prezzo = hours * 33.60
-    } else{}
+    } else {
+        alert("Selezionare un tipo di lavoro")
+    }
 
- 
-    
+    let codiceSconto = codeInput.value;
+
+    if (sconto.includes(codiceSconto)) {
+        prezzo = prezzo * 0.75; 
+    } else if (codiceSconto !== "") {
+        alert("Codice promozionale non valido");
+    }
+
 
     const tot = prezzo.toFixed(2);
     sumP.innerHTML = `<i class="bi bi-currency-euro"></i> ${tot}`
